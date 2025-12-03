@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dexdep Developer Beta Program</title>
+    <title>Dexdep* Developer Beta Program</title>
     <style>
         * {
             margin: 0;
@@ -82,6 +82,13 @@
             padding: 0 20px;
         }
 
+        .error-text {
+            color: #f56565;
+            font-size: 14px;
+            margin-bottom: 20px;
+            display: none;
+        }
+
         .logo {
             position: fixed;
             top: 20px;
@@ -95,15 +102,35 @@
 <body>
     <img src="logo.png" alt="Logo" class="logo">
     <div class="container">
-        <h1>Dexdep Developer Beta Program</h1>
-        <p style="color: red; font-size: 18px; margin-top: 20px;">
-            Никаких Бета-программ не обнаружено.
+        <h1>Dexdep* Developer Beta Program</h1>
+        <p id="error-message" class="error-text">Произошла ошибка. Повторите попытку позже.</p>
+        <div class="button-container">
+            <a href="mailto:" class="beta-button">
+                Отправить запрос на бета-доступ VDesktop* (недоступно)
+            </a>
+            <a href="mailto:VortexDevelopers@yandex.ru?subject=Запрос%20на%20доступ%20к%20бета-версии%20проекта%20Vortex%20Phone&body=Здравствуйте!%0D%0AПрошу%20предоставить%20доступ%20к%20бета-версии%20проекта.%0D%0A%0D%0AМои%20данные:%0D%0AИмя:%20[Ваше%20имя]%0D%0AПричина%20запроса:%20[Опишите]%0D%0AВаш%20аккаунт%20в%20фигме:%20[Email,%20на%20котором%20зарегестрирован%20ваш%20аккаунт]" class="beta-button">
+                Отправить запрос на бета-доступ VPhone*
+            </a>
+        </div>
+        <p class="info-text">
+            Не беспокойтесь, сайт перенаправит вас в приложение почты, которое стоит на вашем устройстве по умолчанию.
         </p>
     </div>
+    <p class="info-text">
+        *- Это выдуманное слово/компания/элемент
+    </p>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const errorMessage = document.getElementById('error-message');
+            const buttons = document.querySelectorAll('.beta-button');
+
+            buttons.forEach(function (btn) {
+                btn.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    errorMessage.style.display = 'block';
+                });
+            });
+        });
+    </script>
 </body>
 </html>
-
-
-
-
-
